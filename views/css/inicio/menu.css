@@ -1,0 +1,99 @@
+/*MOVIL*/
+
+#menu-bar{
+    display: none;                                          /*Para ocultar el checkbox*/                  
+}
+
+header label{
+    float: right;                                           /*Para que flote a la derecha*/
+    font-size: 28px;                                        /*Tamaño de icono del menú*/
+    margin: 6px 0;                                          /*Margen de 6px a los lados y 0 para arribay abajo*/
+    cursor: pointer;
+}
+
+header{
+    padding: 10px 0;
+}
+
+.menu{                                                      /*Menu desplegable*/
+    top: 50px;                                              /*Para que comience al inicio de la pantalla*/
+    left: 0;                                                /*Para que comience al inicio de la pantalla*/
+    position: absolute;                                     /*Para darle una posición*/
+    width: 100%;                                            /*Ancho del menú*/
+    height: 100vh;                                          /*Alto del menú (vh: tamaño de la pantalla)*/
+    transition: all 0.5s;                                   /*Tiempor en que se moverá el menú*/
+    transform: translateX(-100%);                            /*El menú se moverá horizontalmente hacia la izquiera*/
+}
+
+.menu a{
+    display: block;                                         /*Para que se posicionen como bloques*/
+    color: #FFFFFF;                                       /*Color de las letras*/
+    height: 30px;                                           /*Alto entre cada opción*/
+    text-decoration: none;                                  /*Para quitar la decoración de los links(<a>)*/
+    padding: 15px;                          
+    border-bottom: 1px solid rgba(255,255,255,0.3);       /*Borde para separar las opciones*/
+    padding-bottom: 5px;
+}
+
+.registro a{                                                /*Botones de registrar e iniciar sesion*/
+    width: 30%;
+    display: flex;
+    float: left;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 8%;
+    justify-content: center;
+    background: linear-gradient(#FFDA63, #FFB940);
+    opacity: 0.8;
+    border: 0;
+    color: #333333;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.menu .registro a:hover{
+    opacity: 0.9;
+    background: linear-gradient(#FFDA63, #FFB940);
+}
+
+.menu a:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#menu-bar:checked ~ .menu{                                   /*Cuando se haga clic en el icono de menu, para que haga la animación*/
+    transform: translateX(0%);                               /*El menú se moverá horizontalmente hacia la derecha*/
+}
+
+
+@media (min-width: 1024px){
+    .menu{
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+        height: 50px;
+    }
+
+    .menu a{
+        border: none;
+
+    }
+
+    header label{
+        display: none;
+    }
+
+    .registro a{
+        margin-top: 0;
+        width: 110px;
+        margin-left: 20px;
+        border: 2px solid rgba(255,255,255,0.3);
+        padding: 2px 2px 1px 2px;
+        margin-top: 4px;
+        padding-top: 8px;
+        padding-left: 4px;
+        justify-content: center;
+    }
+}
