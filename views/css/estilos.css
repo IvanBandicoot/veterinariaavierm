@@ -19,7 +19,7 @@ body{
 header{
     width: 100%;                    /*Ancho de toda la página*/
     height: 50px;                   /*Altura de 50px para el header*/
-    background: #333333;          /*Color de fondo*/            
+    background: #29335C;          /*Color de fondo*/            
     color: #FFFFFF;               /*Color de las letras*/
     position: fixed;                /*Posición fija para que siempre se vea*/
     top: 0;                         /*Para que comience al inicio de la pantalla*/
@@ -28,7 +28,7 @@ header{
 }
 
 .contenedor{                        /*Para que todo esté alineado*/
-    width: 98%;
+    width: auto;
     margin: auto;
 }
 

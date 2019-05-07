@@ -2,11 +2,13 @@
 
 #banner{
     margin-top: 50px;
+
 }
 
 #banner img{
     width: 100%;                                                /*Ancho de la imagen*/
-    height: 100%;                                               /*Altura de la imagen*/
+    height: 30vh;    
+                                               /*Altura de la imagen*/
 }
 
 #banner .contenedor{
@@ -15,10 +17,12 @@
     left: 50%;
     transform: translateX(-50%) translateY(-155%);               /*Para ubicar el contenido en medio de la imagen del banner*/
     color: #333333;
+    margin-left: -350px;
 }
 
 #banner h2{
     font-size: 28px;
+    text-align: left;
 }
 
 #banner a{
@@ -60,6 +64,6 @@
 
 @media (min-width:1024px){
     #banner img{
-        margin-top: -200px;
+        margin-top: 0px;
     }
 }

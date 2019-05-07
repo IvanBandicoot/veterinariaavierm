@@ -1,6 +1,6 @@
 <header>
     <div class="contenedor">
-        <a class="logo" href="#template.php"><img src="views/img/logo.jpg" alt=""></a>
+        <img src="views/img/logo.jpeg" alt="">
         <input type="checkbox" id="menu-bar">
         <label class="icon-menu" for="menu-bar"></label>
         <nav class="menu">

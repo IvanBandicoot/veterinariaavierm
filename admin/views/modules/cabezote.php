@@ -26,13 +26,6 @@
 							<li><a href="salir"><span class="fa fa-times"></span>Salir</a></li>
 						</ol>
 
-						<!--USUARIO
-							<ol id="admin">
-							<li><a href="perfil"><span class="fa fa-user"></span>Mi Perfil</a></li>
-							<li><a href="salir"><span class="fa fa-times"></span>Salir</a></li>
-						</ol>
-						-->
-
 					</p>
 
 				</div>

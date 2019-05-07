@@ -1,7 +1,7 @@
 <div id="backIngreso" style="margin-top: -10%;">
-			<form method="post" id="formIngreso" onsubmit="return validarIngreso()">
+			<form style="background-color: #29335C;" method="post" id="formIngreso" onsubmit="return validarIngreso()">
 
-				<h1 id="tituloFormIngreso">REGISTRATE</h1>
+				<h1 id="tituloFormIngreso" style="background-color: #29335C;">REGISTRATE</h1>
 				
 				<input class="form-control formIngreso" type="text" placeholder="Nombre" id="nombreRegistro" name="nombreRegistro" required>
 				<input class="form-control formIngreso" type="text" placeholder="Apellido" id="apellidoRegistro" name="apellidoRegistro" required>
@@ -20,13 +20,13 @@
 				</select>
 
 				<input class="form-control formIngreso" type="text" placeholder="Respuesta pregunta de seguridad" id="respuestaIngreso" name="respuestaRegistro">
-				<input class="form-control formIngreso btn btn-warning" id="btn-ingreso" type="submit" value="Resgistrar">
+				<input style="background-color: #FAC8CD;" class="form-control formIngreso btn btn-warning" id="btn-ingreso" type="submit" value="Resgistrar">
 						<?php
 
 							$registrar = new Usuario();
 							$registrar -> registrarUsuario();
 
 						?>
-				<div style="margin-top: 20px;"><a id="forget" href="ingreso">Estoy registrado</a></div>
+				<div style="margin-top: 20px;"><a style="color: #FAC8CD;" id="forget" href="ingreso">Estoy registrado</a></div>
 			</form>
 		</div>

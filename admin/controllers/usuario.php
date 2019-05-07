@@ -128,6 +128,8 @@ class Usuario{
 					<script>
 
 						$("#btn-ingreso").hide("fast");
+						$("#usuarioIngreso").hide("fast");
+						$("#forget").hide("fast");
 
 					</script>
 
@@ -141,8 +143,11 @@ class Usuario{
 						          <input type="text" name="RespuestaP" placeholder="Respuesta" class="form-control" required>
 						        </div>
 				       			<div class="form-group text-center">
-						       		<input type="submit" value="Enviar" class="btn btn-primary">
+						       		<input type="submit" value="Enviar" class="btn btn-warning">
 						       </div>
+		       				   <div style="margin-top: 10px;"><a href="ingreso" id="forget">Sé mi contraseña</a></div>
+			  	       		   <div style="margin:15px 0 15px;"><a href="registro" id="forget">¿Está registrado?</a></div>
+				        </form>
 					';
 		}
 

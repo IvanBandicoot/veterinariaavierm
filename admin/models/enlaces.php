@@ -20,7 +20,8 @@ class EnlacesModel{
 	       $enlaces == "historiamedica" ||
 	       $enlaces == "mensajes" ||
 	       $enlaces == "perfil" ||
-	       $enlaces == "salir"){
+	       $enlaces == "salir" ||
+	   	   $enlaces == "vacunasConsulta"){
 
 				$module = "views/modules/".$enlaces.".php";
 			

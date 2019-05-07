@@ -58,10 +58,6 @@
           <input type="text" name="editarApellido" value="<?php echo $_SESSION["apellido"];?>" class="form-control" required>
         </div>
 
-        <div class="form-group">
-          <input type="text" name="editarUsuario" value="<?php echo $_SESSION["usuario"];?>" class="form-control" required>
-        </div>
-
        <div class="form-group">
           <input type="email" name="editarEmail" value="<?php echo $_SESSION["correo"];?>" class="form-control" required>
        </div>
@@ -70,11 +66,11 @@
           <select name="EditarPreguntaSeguridad" class="form-control" required>
             <option value="">Seleccione una Pregunta de seguridad</option>
 			<option value="">-Escoga pregunta de seguridad-</option>
-			<option value="">¿Comida Favorita?</option>
-			<option value="">¿Deporte Favorito?</option>
-			<option value="">¿Serie de Televisión Favorita?</option>
-			<option value="">¿Familiar Querido?</option>
-			<option value="">¿Color Favorito?</option>
+			<option value="¿Comida Favorita?">¿Comida Favorita?</option>
+			<option value="¿Deporte Favorito?">¿Deporte Favorito?</option>
+			<option value="¿Serie de Televisión Favorita?">¿Serie de Televisión Favorita?</option>
+			<option value="¿Familiar Querido?">¿Familiar Querido?</option>
+			<option value="¿Color Favorito?">¿Color Favorito?</option>
           </select>
        </div>
 

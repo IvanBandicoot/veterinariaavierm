@@ -130,4 +130,26 @@ class Vacuna{
 
 	}
 
+	#consultar vacunas para el usuario
+
+	public function consultarVacunasUsuario(){
+
+		if(isset($_POST["cedulaU"])){
+
+			$datos = $_POST["cedulaU"];
+
+			$respuesta = VacunaModel::consultarVacunasUsuarioModel($datos, "vacuna");
+
+			foreach ($respuesta as $row => $item) {
+				echo '<tr>
+				        <td>'.$item["nombre"].'</td>
+				        <td>'.$item["tipovacuna"].'</td>
+				        <td>'.$item["fecha"].'</td>
+				        <td></td>
+				      </tr>';
+			}
+
+		}
+	}
+
 }

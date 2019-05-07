@@ -41,6 +41,22 @@
 
 					</li>
 
+					<?php
+					if($_SESSION["usuario"] != "admin"){
+
+						echo '<li class="botonesInicio">
+			
+									<a href="vacunasConsulta">
+									<div style="background:#ED3E3E">
+									<span class="fa fa-medkit"></span>
+									<p>Consultar Vacunas</p>
+									</div>
+									</a>
+
+								</li>';
+					}
+					?>
+
 					<?php if($_SESSION["usuario"] == "admin"){
 					echo '<li class="botonesInicio">
 					

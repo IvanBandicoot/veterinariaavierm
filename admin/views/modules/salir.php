@@ -4,4 +4,4 @@ session_start();
 
 session_destroy();
 
-header("location:ingreso");
+header("location:http://localhost/proyectoIng/veterinariaAvierm/");

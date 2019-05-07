@@ -6,7 +6,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" href="views/images/logotipo.jpg">
+	<link rel="icon" href="views/images/logotipo.jpeg">
 
 	<link rel="stylesheet" href="views/css/bootstrap.min.css">
 	<link rel="stylesheet" href="views/css/font-awesome.min.css">

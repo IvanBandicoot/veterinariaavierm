@@ -1,7 +1,7 @@
 		<div id="backIngreso">
-			<form method="post" id="formIngreso" onsubmit="return validarIngreso()">
+			<form method="post" id="formIngreso" onsubmit="return validarIngreso()" style="background-color: #29335C;">
 
-				<h1 id="tituloFormIngreso">INICIO DE SESIÓN</h1>
+				<h1 id="tituloFormIngreso" style="background-color: #29335C;">INICIO DE SESIÓN</h1>
 				
 				<input class="form-control formIngreso" type="text" placeholder="Ingrese su Usuario" id="usuarioIngreso" name="usuarioIngreso">
 				<input class="form-control formIngreso" type="password" placeholder="Ingrese su Contraseña" id="passwordIngreso" name="passwordIngreso">
@@ -11,8 +11,8 @@
 							$ingreso -> ingresoController();
 
 						?>
-				<input class="form-control formIngreso btn btn-warning" id="btn-ingreso" type="submit" value="Enviar">
-				<div style="margin-top: 20px;"><a id="forget" href="registro">¿Está registrado?</a></div>
-				<div style="margin-top:15px;"><a id="forget" href="recuperarContrasena">¿Olvidó su contraseña?</a></div>
+				<input class="form-control formIngreso" style="background-color: #FAC8CD;" id="btn-ingreso" type="submit" value="Enviar">
+				<div style="margin-top: 20px;"><a id="forget" href="registro" style="color: #FAC8CD;">¿Está registrado?</a></div>
+				<div style="margin-top:15px;"><a id="forget" href="recuperarContrasena" style="color: #FAC8CD;">¿Olvidó su contraseña?</a></div>
 			</form>
 		</div>

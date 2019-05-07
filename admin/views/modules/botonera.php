@@ -2,11 +2,11 @@
 		COLUMNA BOTONERA           
 		======================================-->
 
-			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12" id="col1" style="background: #333333;">
+			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12" id="col1" style="background-color: #29335C;">
 				
-				<div id="logo" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div style="margin-left: 35px;" id="logo" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						
-					<img src="views/images/logotipo.jpg" class="img-responsive" alt="Image">
+					<img src="views/images/logotipo.jpeg" class="img-responsive" alt="Image">
 
 
 				</div>
@@ -15,7 +15,7 @@
 				BOTONERA MOVIL            
 				======================================-->
 
-				<div id="botoneraMovil" class="navbar-header navbar-inverse">
+				<div id="botoneraMovil" class="navbar-header navbar-inverse" style="background-color: #29335C;">
 
 					<button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#botonera">
 
@@ -29,21 +29,32 @@
 
 				<!--====  Fin de BOTONERA MOVIL  ====-->
 
-				<nav id="botonera" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse navbar-collapse text-center">
+				<nav style="background-color: #29335C;" id="botonera" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse navbar-collapse text-center">
 							
 					<ul class="nav navbar">
 						<li><a href="inicio">Inicio <span class="glyphicon glyphicon-new-window"></span></a></li>
 						<li><a href="inicio">Artículos <span class="glyphicon glyphicon-new-window"></span></a></li>
+						
 						<?php 
 							if($_SESSION["usuario"] == "admin"){
-							echo '<li><a href="inicio">Galería <span class="glyphicon glyphicon-new-window"></span></a></li>
-								  <li><a href="historiamedica">Historia Médica <span class="glyphicon glyphicon-new-window"></span></a></li>';
-							} 
+
+								echo '<li><a href="inicio">Galería <span class="glyphicon glyphicon-new-window"></span></a></li>
+
+									  <li><a href="historiamedica">Historia Médica <span class="glyphicon glyphicon-new-window"></span></a></li>
+
+									  <li><a href="inicio">Noticia <span class="glyphicon glyphicon-new-window"></span></a></li>
+
+									  <li><a href="vacunas">Vacuna <span class="glyphicon glyphicon-new-window"></span></a></li>';
+								} 
 							?>
-						<li><a href="vacunas">Vacuna <span class="glyphicon glyphicon-new-window"></span></a></li>
-						<?php if($_SESSION["usuario"] == "admin"){
-							echo '<li><a href="inicio">Noticia <span class="glyphicon glyphicon-new-window"></span></a></li>';
-						}?>
+
+						<?php if($_SESSION["usuario"] != "admin"){
+
+							echo '<li><a href="vacunasConsulta">Ver Vacunas<span class="glyphicon glyphicon-new-window"></span></a></li>';
+							
+							}
+
+						?>
 						
 					</ul>
 

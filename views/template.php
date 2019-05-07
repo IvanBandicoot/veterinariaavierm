@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="views/css/fontello.css">
     <link rel="stylesheet" href="views/css/contactenos.css">
     <link rel="stylesheet" href="views/css/estilos.css">
+    <link rel="icon" href="views/img/logo.jpeg">
+    <link rel="stylesheet" type="text/css" href="views/css/font-awesome.min.css">
 
     <title>Veterinaria</title>
 </head>

@@ -11,9 +11,6 @@ header label{
     cursor: pointer;
 }
 
-header{
-    padding: 10px 0;
-}
 
 .menu{                                                      /*Menu desplegable*/
     top: 50px;                                              /*Para que comience al inicio de la pantalla*/
@@ -27,6 +24,7 @@ header{
 
 .menu a{
     display: block;                                         /*Para que se posicionen como bloques*/
+    background-color: #3333333;
     color: #FFFFFF;                                       /*Color de las letras*/
     height: 30px;                                           /*Alto entre cada opción*/
     text-decoration: none;                                  /*Para quitar la decoración de los links(<a>)*/
@@ -43,17 +41,17 @@ header{
     margin-top: 20px;
     margin-left: 8%;
     justify-content: center;
-    background: linear-gradient(#FFDA63, #FFB940);
-    opacity: 0.8;
+    background: #FAC8CD;
+    opacity: ;
     border: 0;
-    color: #333333;
+    color: black;
     cursor: pointer;
     border-radius: 20px;
 }
 
 .menu .registro a:hover{
     opacity: 0.9;
-    background: linear-gradient(#FFDA63, #FFB940);
+    background: #F9AEB6;
 }
 
 .menu a:hover{
