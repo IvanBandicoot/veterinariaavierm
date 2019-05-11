@@ -57,7 +57,7 @@ class VacunaModel{
 	#consultar vacuna usuario
 	public function consultarVacunasUsuarioModel($datos, $tabla){
 
-		$stmt = Conexion::conectar()->prepare("SELECT nombre, tipovacuna, fecha FROM $tabla WHERE cedula = :cedula");
+		$stmt = Conexion::conectar()->prepare("SELECT id, nombre, tipovacuna, fecha FROM $tabla WHERE cedula = :cedula");
 
 		$stmt -> bindParam(":cedula", $datos, PDO::PARAM_INT);
 

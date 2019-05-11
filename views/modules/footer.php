@@ -10,13 +10,13 @@
 
                 <div class="l1">
                    <img src="">
-                <label><i class="fa fa-phone"></i>0212-481-85-39</label>
+                <label><i class="fas fa-phone-square" style="font-size: 18px; color: #29335C;"></i> 0212-481-85-39</label>
                 </div>
                 <br>
 
                 <div class="l1">
                    <img src="">
-                <label><i class="fa-envelope"></i>avierm.ca@gmail.com</label>
+                <label><i class="fas fa-envelope" style="font-size: 18px; color: #29335C;"></i> avierm.ca@gmail.com</label>
                 </div>
                 <br>
 

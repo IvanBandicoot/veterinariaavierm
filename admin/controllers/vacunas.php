@@ -145,6 +145,7 @@ class Vacuna{
 				        <td>'.$item["nombre"].'</td>
 				        <td>'.$item["tipovacuna"].'</td>
 				        <td>'.$item["fecha"].'</td>
+				        <td><a disabled="false" href="index.php?action=vacunasConsulta&lista='.$item["id"].'"><span class="btn btn-success fa fa-user" style="margin-left:10px;"></span></a></td>
 				        <td></td>
 				      </tr>';
 			}

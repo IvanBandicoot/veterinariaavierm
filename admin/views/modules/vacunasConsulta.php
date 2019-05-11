@@ -36,6 +36,7 @@
         <th>Nombre</th>
         <th>Tipo de vacuna</th>
         <th>Fecha de nacimiento</th>
+        <th>Lista cantidad</th>
         <th></th>
       </tr>
     </thead>
@@ -48,10 +49,10 @@
 			?>
     </tbody>
   </table>
-
-  <a href="tcpdf/pdf/suscriptores.php" target="blank">
+<!--
+  <a href="tcpdf/pdf/vacunas.php" target="blank">
   <button class="btn btn-primary pull-right" style="margin:20px;">Imprimir Suscriptores</button>
-  </a>
+  </a>-->
   <!--Se recomienda usar TCPDF para el uso de descargar archivo pdf's-->
   </div>
 

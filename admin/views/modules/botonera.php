@@ -38,7 +38,7 @@
 						<?php 
 							if($_SESSION["usuario"] == "admin"){
 
-								echo '<li><a href="inicio">Galería <span class="glyphicon glyphicon-new-window"></span></a></li>
+								echo '<li><a href="galeria">Galería <span class="glyphicon glyphicon-new-window"></span></a></li>
 
 									  <li><a href="historiamedica">Historia Médica <span class="glyphicon glyphicon-new-window"></span></a></li>
 

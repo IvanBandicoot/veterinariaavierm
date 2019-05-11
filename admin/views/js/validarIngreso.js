@@ -1,8 +1,9 @@
-/*function validarIngreso(){
+function validarIngreso(){
 
 	var expresion = /^[a-zA-Z0-9]*$/;
 
-	if(!expresion.test($("#usuarioIngreso").val())){
+	if(!expresion.test($("#usuarioI").val())){
+		document.querySelector("label[for='nombreR']").innerHTML += "<br>No escriba caracteres especiales";
 		return false;
 	}
 
@@ -12,4 +13,4 @@
 
 	return true;
 
-}*/
+}

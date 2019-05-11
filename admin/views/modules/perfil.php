@@ -48,6 +48,8 @@
         
         <input type="hidden" name="idPerfil" value="<?php echo $_SESSION["id"];?>">
 
+        <input type="hidden" name="editarUsuario" value="<?php echo $_SESSION["usuario"]; ?>">
+
         <input type="hidden" name="actualizarSesion" value="ok">
 
         <div class="form-group">

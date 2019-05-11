@@ -105,4 +105,33 @@ class UsuarioModel{
 
 	}
 
+	#validar usuario existente
+	public function validarUsuarioAjaxModel($datos, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("SELECT usuario FROM $tabla WHERE usuario = :usuario");
+
+		$stmt -> bindParam(":usuario", $datos, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+	}
+
+	#validar email existente
+	public function validarEmailModel($datos, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("SELECT correo FROM $tabla WHERE correo = :correo");
+
+		$stmt -> bindParam(":correo", $datos, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+	}
 }

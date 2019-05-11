@@ -3,7 +3,9 @@
 
 				<h1 id="tituloFormIngreso" style="background-color: #29335C;">INICIO DE SESIÓN</h1>
 				
-				<input class="form-control formIngreso" type="text" placeholder="Ingrese su Usuario" id="usuarioIngreso" name="usuarioIngreso">
+				<label for="nombreR" style="color: white;">Usuario:<span></span></label>
+				<input class="form-control formIngreso" type="text" placeholder="Ingrese su Usuario" id="usuarioI" name="usuarioIngreso">
+
 				<input class="form-control formIngreso" type="password" placeholder="Ingrese su Contraseña" id="passwordIngreso" name="passwordIngreso">
 						<?php
 

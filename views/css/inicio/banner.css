@@ -15,7 +15,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-155%);               /*Para ubicar el contenido en medio de la imagen del banner*/
+    transform: translateX(20%) translateY(-190%);               /*Para ubicar el contenido en medio de la imagen del banner*/
     color: #333333;
     margin-left: -350px;
 }
@@ -65,5 +65,14 @@
 @media (min-width:1024px){
     #banner img{
         margin-top: 0px;
+    }
+
+    #banner .contenedor{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-155%);               /*Para ubicar el contenido en medio de la imagen del banner*/
+        color: #333333;
+        margin-left: -350px;
     }
 }

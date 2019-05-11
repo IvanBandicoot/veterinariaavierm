@@ -237,5 +237,34 @@ class Usuario{
 		}
 
 	}
+
+	#validar usuario existente
+	public function validarUsuarioAjaxController($validarUsuario){
+
+		$datos = $validarUsuario;
+
+		$respuesta = UsuarioModel::validarUsuarioAjaxModel($datos, "usuario");
+
+		if(strlen($respuesta["usuario"]) > 0){
+			echo 0;
+		}else{
+			echo 1;
+		}
+
+	}
+
+	#validar email existente
+	public function validarEmailController($validarEmail){
+
+		$datos = $validarEmail;
+
+		$respuesta = UsuarioModel::validarEmailModel($datos, "usuario");
+
+		if(strlen($respuesta["correo"]) > 0){
+			echo 0;
+		}else{
+			echo 1;
+		}
+	}
 	
 }

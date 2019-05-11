@@ -60,7 +60,7 @@ class historiaMedica{
 			echo '<tr>
 					<td style="width:50px;">'.$item["nombrea"].'</td>
 			        <td>'.$item["cedula"].'</td>
-			        <td style="width:50px;">'.$item["fechac"].'</td>
+			        <td style="width:50px;">'.$item["ultima"].'</td>
 					<td>'.$item["diagnostico"].'</td>
 					<td>'.$item["tratamiento"].'</td>
 			        <td style="width:100px"><a href="#historiamedica'.$item["id"].'" data-toggle="modal"><span class="btn btn-info fa fa-pencil modificarMascota"></span></a>

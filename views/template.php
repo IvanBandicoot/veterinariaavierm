@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="views/css/fontello.css">
     <link rel="stylesheet" href="views/css/contactenos.css">
     <link rel="stylesheet" href="views/css/estilos.css">
+    <link rel="stylesheet" href="views/css/fontawesome.min.css">
+    <link rel="stylesheet" href="views/css/fontawesome.css">
     <link rel="icon" href="views/img/logo.jpeg">
     <link rel="stylesheet" type="text/css" href="views/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <title>Veterinaria</title>
 </head>

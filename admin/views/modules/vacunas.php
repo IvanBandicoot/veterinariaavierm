@@ -23,11 +23,11 @@
             <form method="post">
 					<h1 style="margin-bottom:30px; text-align:center">Vacunas para Perros</h1>
 					<label for="">Nombre Animal</label>
-					<input type="text" class="form form-control" name="nombrePerro" style="margin-bottom:20px;" placeholder="Nombre del animal">
+					<input type="text" class="form form-control" name="nombrePerro" style="margin-bottom:20px;" placeholder="Nombre del animal" maxlength="9" required>
 					<label for="">Cédula Dueño</label>
-					<input type="text" class="form form-control" name="cedulaPerro" style="margin-bottom:20px;" placeholder="Cédula del dueño">
+					<input type="text" class="form form-control" name="cedulaPerro" style="margin-bottom:20px;" placeholder="Cédula del dueño" maxlength="8" required>
 					<label for="">Tipo de vacunas</label>
-					<select class="form form-control" name="tipoPerro" id="" style="margin-bottom:20px;">
+					<select class="form form-control" name="tipoPerro" id="" style="margin-bottom:20px;" required>
 						<option value="Moquillo">Moquillo</option>
 						<option value="Hepatitis">Hepatitis</option>
 						<option value="Parvovirosis">Parvovirosis</option>
@@ -38,9 +38,9 @@
 						<option value="Bordetella">Bordetella</option>						
 					</select>
 					<label for="">Fecha</label>
-					<input type="date" name="fechaPerro" class="form form-control" style="margin-bottom:20px;" placeholder="Fecha de Nacimiento">
+					<input type="date" min="2009-01-01" max="2020-01-01" name="fechaPerro" class="form form-control" style="margin-bottom:20px;" placeholder="Fecha de Nacimiento" required>
 
-					<input class="form-control formIngreso btn btn-warning pt-2" id="btn-ingreso" type="submit" value="Registrar Vacuna" style="margin-top:30px; margin-bottom:70px;">
+					<input style="background-color: #FAC8CD;" class="form-control formIngreso btn btn-warning pt-2" id="btn-ingreso" type="submit" value="Registrar Vacuna" style="margin-top:30px; margin-bottom:70px;">
 							<?php 
 								$Perro = new Vacuna();
 								$Perro -> agregarVacunaPerro();
@@ -54,11 +54,11 @@
         <form method="post">
 				<h1 style="text-align:center; margin-top: 2px; margin-bottom:26px;">Vacunas para Gatos</h1>
 					<label for="">Nombre Animal</label>
-					<input type="text" class="form form-control" name="nombreGato" style="margin-bottom:20px;" placeholder="Nombre del animal">
+					<input type="text" maxlength="9" class="form form-control" name="nombreGato" style="margin-bottom:20px;" placeholder="Nombre del animal" required>
 					<label for="">Cédula Dueño</label>
-					<input type="text" class="form form-control" name="cedulaGato" style="margin-bottom:20px;" placeholder="Cédula del dueño">
+					<input type="text" class="form form-control" name="cedulaGato" style="margin-bottom:20px;" placeholder="Cédula del dueño" required>
 					<label for="">Tipo de vacunas</label>
-					<select class="form form-control" style="margin-bottom:20px;" name="tipoGato" id="">
+					<select class="form form-control" style="margin-bottom:20px;" name="tipoGato" id="" required>
 						<option value="Panleucopenia">Panleucopenia</option>
 						<option value="Rinotraqueitis">Rinotraqueitis</option>
 						<option value="Calcivirus">Calcivirus</option>
@@ -68,8 +68,8 @@
 						<option value="Bordetella">Bordetella</option>
 					</select>
 					<label for="">Fecha</label>
-					<input type="date" name="fechaGato" class="form form-control" style="margin-bottom:20px;" placeholder="Fecha de Nacimiento">
-					<input class="form-control formIngreso btn btn-warning pt-2" id="btn-ingreso" type="submit" value="Registrar Vacuna" style="margin-top:30px; margin-bottom:70px; margin-left: 100px; width: 70%;">
+					<input type="date" min="2009-01-01" max="2020-01-01" name="fechaGato" class="form form-control" style="margin-bottom:20px;" placeholder="Fecha de Nacimiento" required>
+					<input style="background-color: #FAC8CD;" class="form-control formIngreso btn btn-warning pt-2" id="btn-ingreso" type="submit" value="Registrar Vacuna" style="margin-top:30px; margin-bottom:70px; margin-left: 100px;">
 					<?php
 						$gato = new Vacuna();
 						$gato -> agregarVacunaGato();

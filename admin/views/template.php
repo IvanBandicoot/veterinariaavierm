@@ -50,7 +50,9 @@
 
 	<script src="views/js/script.js"></script>
 	<script src="views/js/validarIngreso.js"></script>
+	<script src="views/js/validarRegistro.js"></script>
 	<script src="views/js/gestorPerfiles.js"></script>
+	<script src="views/js/galeria.js"></script>
 	
 </body>
 

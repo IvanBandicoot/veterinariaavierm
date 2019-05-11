@@ -7,18 +7,24 @@ footer .contenedor{
     background-color: #e5d1d0;
     margin-left: 0px;
     margin-right: 0px;
-
 }
 
 .mapa{
-margin-left: 180px;
-border-radius: 15px;
+    margin-left: 70px;
+    border-radius: 15px;
+}
+
+iframe{
+    width: 400px;
+    height: 500px;
 }
 
 .contacto{
+    margin-top: 20px;
     max-width: 450px;
-    margin-left: 300px;
+    margin-left: 140px;
 }
+
 .copy{
     font-size: 15px;
     text-align: center;
@@ -32,4 +38,21 @@ border-radius: 15px;
     text-align: center;
     font-size: 28px;
     padding-top: 20px;
+}
+
+@media (min-width:1024px){
+    .mapa{
+        margin-left: 180px;
+        border-radius: 15px;
+    }
+
+    iframe{
+        width: 600px;
+        height: 400px;;
+    }
+
+    .contacto{
+        max-width: 450px;
+        margin-left: 300px;
+    }
 }

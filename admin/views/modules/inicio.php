@@ -60,7 +60,7 @@
 					<?php if($_SESSION["usuario"] == "admin"){
 					echo '<li class="botonesInicio">
 					
-								<a href="inicio">
+								<a href="galeria">
 								<div style="background:#04E6DE">
 								<span class="fa fa-image"></span>
 								<p>Galería</p>
