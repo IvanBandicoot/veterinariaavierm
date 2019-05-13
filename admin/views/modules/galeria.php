@@ -26,7 +26,12 @@
 				
 				<ul id="lightbox">
 
-					
+					<?php 
+
+						$imagen = new gestorGaleria();
+						$imagen -> mostrarImagenVistaController();
+
+					?>
 					
 				</ul>
 
