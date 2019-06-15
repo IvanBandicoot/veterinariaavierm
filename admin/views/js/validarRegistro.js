@@ -85,7 +85,9 @@ $("#correoRegistro").change(function(){
 
 });
 
-/*=====  FIN VALIDAR USUARIO EXISTENTE AJAX  ======*/
+/*=====  FIN VALIDAR EMAIL EXISTENTE AJAX  ======*/
+
+/*=====  VALIDAR CEDULA EXISTENTE AJAX  ======*/
 
 /*=============================================
 VALIDAR REGISTRO

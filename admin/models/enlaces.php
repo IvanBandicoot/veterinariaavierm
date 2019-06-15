@@ -11,6 +11,7 @@ class EnlacesModel{
 	       $enlaces == "ingreso" ||
 	       $enlaces == "noticia" ||
 	       $enlaces == "articulos" ||
+	       $enlaces == "reservar" ||
 		   $enlaces == "galeria" ||
 		   $enlaces == "registro" ||
 		   $enlaces == "recuperarContrasena" ||

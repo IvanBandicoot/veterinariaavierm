@@ -126,51 +126,46 @@
 			</div>
 		</div>';
 
+	}else if($_SESSION["usuario"] != "admin"){
+
+		echo '
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="float:right; margin-top:-1120px">
+				
+			<form method="post" style="margin-bottom:10px;">
+				<h3>Ingrese su C.I</h3>
+				<p>Al ingresar su C.I le mostrara sus articulos reservados</p>
+				<input type="text" placeholder="C.I:" name="cedulaRe">
+			</form>
+
+			<div class="table-responsive">';
+
+				echo '<table id="tablaSuscriptores" class="table table-striped display">
+			    <thead>';
+			      echo '<tr>
+			      	<th>Nombre</th>
+			      	<th>Descripcion</th>
+			        <th>Cantidad</th>
+			        <th>Precio</th>
+			        <th>Cedula</th>
+			        <th>Eliminar</th>
+			    
+			      </tr>';
+			    echo '</thead>
+			    <tbody>';
+			    	
+			    	$articulo = new Articulo();
+			    	$articulo -> mostrarArticulosReservadors();
+			    	$articulo -> EliminarReservaArticulo();
+
+				echo '</tbody>
+				</thead>
+			  </table>
+			</div>
+		</div>';
+
 	}
 
 ?>
-
-				<!--USUARIO
-				
-				<table id="tablaSuscriptores" class="table table-striped display">
-			    <thead>
-			      <tr>
-			        <th>Nombre Mascota</th>
-			        <th>Tipo Animal</th>
-			        <th>Fecha Nacimiento</th>
-			        <th>Consultar y Descargar vacunas</th>
-			      </tr>
-			    </thead>
-			    <tbody>
-			      <tr>
-			        <td>Toby</td>
-			        <td>Perro</td>
-			        <td>24/06/2017</td>
-							<td><span class="btn btn-info fa fa-search quitarSuscriptor"></span><span class="btn btn-warning fa fa-download descargarVacunas" style="margin-left: 10px;"></span></td>
-			      </tr>
-			      <tr>
-			        <td>Mary</td>
-			        <td>Loro</td>
-			        <td>05/12/2013</td>
-			        <td><span class="btn btn-info fa fa-search quitarSuscriptor"></span><span class="btn btn-warning fa fa-download descargarVacunas" style="margin-left: 10px;"></span></td>
-			      </tr>
-			      <tr>
-			        <td>Misu</td>
-			        <td>Gato</td>
-			        <td>31/12/2018</td>
-			        <td><span class="btn btn-info fa fa-search quitarSuscriptor"></span><span class="btn btn-warning fa fa-download descargarVacunas" style="margin-left: 10px;"></span></td>
-			      </tr>
-			        <tr>
-			        <td>John</td>
-			        <td>Lobo</td>
-			        <td>13/08/2016</td>
-			        <td><span class="btn btn-info fa fa-search quitarSuscriptor"></span><span class="btn btn-warning fa fa-download descargarVacunas" style="margin-left: 10px;"></span></td>
-			      </tr>
-			    </tbody>
-			  </table>
-
-				-->
-
 			  </div>
     		</div>
 

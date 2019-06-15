@@ -30,26 +30,26 @@
 				
 				<ul>
 
-					<li class="botonesInicio">
-					
-						<a href="inicio">
-						<div style="background:#F640DA">
-						<span class="fa fa-file-text-o"></span>
-						<p>Artículos</p>
-						</div>
-						</a>
-
-					</li>
-
 					<?php
 					if($_SESSION["usuario"] != "admin"){
 
 						echo '<li class="botonesInicio">
 			
 									<a href="vacunasConsulta">
-									<div style="background:#ED3E3E">
+									<div style="background:#90323D">
 									<span class="fa fa-medkit"></span>
 									<p>Consultar Vacunas</p>
+									</div>
+									</a>
+
+								</li>
+
+								<li class="botonesInicio">
+			
+									<a href="reservar">
+									<div style="background:#90323D">
+									<span class="fa fa-medkit"></span>
+									<p>Articulos</p>
 									</div>
 									</a>
 
@@ -58,10 +58,22 @@
 					?>
 
 					<?php if($_SESSION["usuario"] == "admin"){
-					echo '<li class="botonesInicio">
+					echo '
+							<li class="botonesInicio">
+					
+								<a href="articulos">
+								<div style="background:#417B5A">
+								<span class="fa fa-file-text-o"></span>
+								<p>Artículos</p>
+								</div>
+								</a>
+
+							</li>
+
+						<li class="botonesInicio">
 					
 								<a href="galeria">
-								<div style="background:#04E6DE">
+								<div style="background:#90323D">
 								<span class="fa fa-image"></span>
 								<p>Galería</p>
 								</div>
@@ -69,39 +81,39 @@
 
 							</li>
 
-					<li class="botonesInicio">
-					
-						<a href="vacunas">
-						<div style="background:#FFBD1A">
-						<span class="fa fa-medkit"></span>
-						<p>Vacuna</p>
-						</div>
-						</a>
+							<li class="botonesInicio">
+							
+								<a href="vacunas">
+								<div style="background:#417B5A">
+								<span class="fa fa-medkit"></span>
+								<p>Vacuna</p>
+								</div>
+								</a>
 
-					</li>
+							</li>
 
-					<li class="botonesInicio">
-					
-						<a href="historiamedica">
-						<div style="background:#ED3E3E">
-						<span class="fa fa-paw"></span>
-						<p>Historia Médica</p>
-						</div>
-						</a>
+							<li class="botonesInicio">
+							
+								<a href="historiamedica">
+								<div style="background:#90323D">
+								<span class="fa fa-paw"></span>
+								<p>Historia Médica</p>
+								</div>
+								</a>
 
-					</li>
+							</li>
 
-					<li class="botonesInicio">
-					
-						<a href="inicio">
-						<div style="background:#19FF0E">
-						<span class="fa fa-newspaper-o"></span>
-						<p>Noticia</p>
-						</div>
-						</a>
+							<li class="botonesInicio">
+							
+								<a href="noticia">
+								<div style="background:#417B5A">
+								<span class="fa fa-newspaper-o"></span>
+								<p>Noticia</p>
+								</div>
+								</a>
 
-					</li>';
-					}
+							</li>';
+						}
 					?>
 
 				</ul>

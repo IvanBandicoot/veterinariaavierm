@@ -33,7 +33,6 @@
 							
 					<ul class="nav navbar">
 						<li><a href="inicio">Inicio <span class="glyphicon glyphicon-new-window"></span></a></li>
-						<li><a href="inicio">Artículos <span class="glyphicon glyphicon-new-window"></span></a></li>
 						
 						<?php 
 							if($_SESSION["usuario"] == "admin"){
@@ -42,7 +41,9 @@
 
 									  <li><a href="historiamedica">Historia Médica <span class="glyphicon glyphicon-new-window"></span></a></li>
 
-									  <li><a href="inicio">Noticia <span class="glyphicon glyphicon-new-window"></span></a></li>
+									  <li><a href="noticia">Noticia <span class="glyphicon glyphicon-new-window"></span></a></li>
+
+									  <li><a href="articulos">Artículos <span class="glyphicon glyphicon-new-window"></span></a></li>
 
 									  <li><a href="vacunas">Vacuna <span class="glyphicon glyphicon-new-window"></span></a></li>';
 								} 
@@ -50,7 +51,8 @@
 
 						<?php if($_SESSION["usuario"] != "admin"){
 
-							echo '<li><a href="vacunasConsulta">Ver Vacunas<span class="glyphicon glyphicon-new-window"></span></a></li>';
+							echo '<li><a href="vacunasConsulta">Ver Vacunas<span class="glyphicon glyphicon-new-window"></span></a></li>
+								<li><a href="reservar">Articulos<span class="glyphicon glyphicon-new-window"></span></a></li>';
 							
 							}
 

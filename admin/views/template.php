@@ -53,6 +53,8 @@
 	<script src="views/js/validarRegistro.js"></script>
 	<script src="views/js/gestorPerfiles.js"></script>
 	<script src="views/js/galeria.js"></script>
+	<script src="views/js/gestorArticulos.js"></script>
+	<script src="views/js/reservarArticulo.js"></script>
 	
 </body>
 

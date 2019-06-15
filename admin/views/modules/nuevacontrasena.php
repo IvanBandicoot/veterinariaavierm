@@ -11,7 +11,6 @@
 				<div style="margin-top:15px;"><a style="color: #FAC8CD;" id="forget" href="registro">¿Está registrado?</a></div>
 
 				<?php
-
 					$nueva = new Usuario();
 					$nueva -> nuevaContrasenaController();
 				?>

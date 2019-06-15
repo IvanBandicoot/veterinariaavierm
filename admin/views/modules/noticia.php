@@ -15,158 +15,109 @@
 ?>
 
 <!--=====================================
-			SLIDE ADMINISTRABLE          
+			NOTICIA ADMINISTRABLE           
+			======================================-->
+			<div id="seccionArticulos" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+				
+				<button class="btn btn-info btn-lg">Agregar Artículo</button>
+
+				<!--==== AGREGAR NOTICIA  ====-->
+
+				<div id="agregarArtículo">
+					
+					<input type="text" placeholder="Título del Artículo" class="form-control">
+
+					<textarea name="" id="" cols="30" rows="5" placeholder="Introducción del Articulo" class="form-control"></textarea>
+
+					<input type="file" name="imagen" class="btn btn-default" id="subirFoto" required>
+
+					<p>Tamaño recomendado: 800px * 400px, peso máximo 2MB</p>
+
+					<div id="arrastreImagenArticulo">	
+						<div id="imagenArticulo"><img src="views/images/articulos/landscape01.jpg" class="img-thumbnail"></div>
+					</div>
+
+					<textarea name="" id="" cols="30" rows="10" placeholder="Contenido del Articulo" class="form-control"></textarea>
+
+					<button id="guardarArticulo" class="btn btn-primary">Guardar Artículo</button>
+
+				</div>
+
+				<hr>
+
+				<!--==== EDITAR NOTICIA  ====-->
+
+				<ul id="editarArticulo">
+
+					<li>
+						<span>
+						<i class="fa fa-times btn btn-danger"></i>
+						<i class="fa fa-pencil btn btn-primary"></i>	
+						</span>
+						<img src="views/images/articulos/landscape02.jpg" class="img-thumbnail">
+						<h1>Lorem Ipsum</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<a href="#articulo1" data-toggle="modal">
+						<button class="btn btn-default">Leer Más</button>
+						</a>
+
+						<hr>
+
+					</li>
+
+					<li>
+						<span>
+						<button class="btn btn-primary pull-right">Guardar</button>	
+						</span>
+
+						<div id="editarImagen"><span class="fa fa-times"></span><img src="views/images/articulos/landscape03.jpg" class="img-thumbnail"></div>
+
+						<input type="text" value="Lorem Ipsum">
+						
+						<textarea cols="30" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+
+						<textarea name="" id="editarContenido" cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+						
+						<hr>
+
+					</li>
+
+				</ul>
+
+				<button class="btn btn-warning pull-right" style="margin:10px 30px">Ordenar Artículos</button>
+
+			</div>
+
+			<!--====  Fin de NOTICIA ADMINISTRABLE  ====-->
+
+			<!--=====================================
+			NOTICIA MODAL         
 			======================================-->
 
-			<div id="imgSlide" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
-			
-			<hr>
+			<div id="articulo1" class="modal fade">
+      
+      			<div class="modal-dialog modal-content">
+        
+       			 <div class="modal-header" style="border:1px solid #eee">
+                    
+           		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		 <h3 class="modal-title">Lorem Ipsum</h3>
+                    
+        		</div>
 
-			<p><span class="fa fa-arrow-down"></span>  Arrastra aquí tu imagen, tamaño recomendado: 1600px * 600px</p>
-				
-				<ul id="columnasSlide">
-					<li class="bloqueSlide">
-						<span class="fa fa-times"></span>
-						<img src="views/images/slide/slide01.jpg" class="handleImg">
-					</li>
-						
-					<li class="bloqueSlide">
-						<span class="fa fa-times"></span>
-						<img src="views/images/slide/slide02.jpg" class="handleImg">			
-					</li>
+        		<div class="modal-body" style="border:1px solid #eee">
+                    
+            	<img src="views/images/articulos/landscape02.jpg" width="100%" style="margin-bottom:20px">
+            	<p class="parrafoContenido">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    
+        		</div>
 
-					<li class="bloqueSlide">
-						<span class="fa fa-times"></span>
-						<img src="views/images/slide/slide03.jpg" class="handleImg">			
-					</li>
+        		<div class="modal-footer" style="border:1px solid #eee">
+                    
+            	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    
+        		</div>
 
-					<li class="bloqueSlide">
-						<span class="fa fa-times"></span>
-						<img src="views/images/slide/slide04.jpg" class="handleImg">
-					</li>
-						
-					<li class="bloqueSlide">
-						<span class="fa fa-times"></span>
-						<img src="views/images/slide/slide01.jpg" class="handleImg">			
-					</li>
+      			</div>
 
-					<li class="bloqueSlide">
-						<span class="fa fa-times"></span>
-						<img src="views/images/slide/slide02.jpg" class="handleImg">			
-					</li>
-				</ul>
-
-				<button id="ordenarSlide" class="btn btn-warning pull-right" style="margin:10px 30px">Ordenar Slides</button>
-
-				<button id="guardarSlide" class="btn btn-primary pull-right" style="display:none; margin:10px 30px">Guardar Orden Slides</button>
-
-			</div>
-
-			<!--===============================================-->
-
-			<div id="textoSlide" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
-			
-			<hr>
-				
-				<ul id="ordenarTextSlide">
-					<li>
-						<span class="fa fa-pencil" style="background:blue"></span>
-						<img src="views/images/slide/slide01.jpg" style="float:left; margin-bottom:10px" width="80%">
-						<h1>Lorem Ipsum</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</li>
-
-					<li>
-						<img src="views/images/slide/slide02.jpg" class="img-thumbnail">
-						<input type="text" class="form-control" placeholder="Título">
-						<textarea row="5" class="form-control" placeholder="Descripción"></textarea>
-						<button class="btn btn-info pull-right" style="margin:10px">Guardar</button>
-					</li>
-
-					<li>
-						<img src="views/images/slide/slide03.jpg" class="img-thumbnail">
-						<input type="text" class="form-control" placeholder="Título">
-						<textarea row="5" class="form-control" placeholder="Descripción"></textarea>
-						<button class="btn btn-info pull-right" style="margin:10px">Guardar</button>
-					</li>
-
-					<li>
-						<span class="fa fa-pencil" style="background:blue"></span>
-						<img src="views/images/slide/slide04.jpg" style="float:left; margin-bottom:10px" width="80%">
-						<h1>Lorem Ipsum</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</li>
-
-					<li>
-						<img src="views/images/slide/slide01.jpg" class="img-thumbnail">
-						<input type="text" class="form-control" placeholder="Título">
-						<textarea row="5" class="form-control" placeholder="Descripción"></textarea>
-						<button class="btn btn-info pull-right" style="margin:10px">Guardar</button>
-					</li>
-
-					<li>
-						<img src="views/images/slide/slide02.jpg" class="img-thumbnail">
-						<input type="text" class="form-control" placeholder="Título">
-						<textarea row="5" class="form-control" placeholder="Descripción"></textarea>
-						<button class="btn btn-info pull-right" style="margin:10px">Guardar</button>
-					</li>
-
-				</ul>
-			</div>
-
-
-
-			<!--===============================================-->
-
-			<div id="slide" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
-				
-				<hr>
-				
-				<ul>
-			       <li>
-		           	<img src="views/images/slide/slide01.jpg">
-		           	<div class="slideCaption">
-		           		<h3>Lorem Ipsum</h3>
-				   		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		           	</div>
-		           </li>
-		           
-			       <li>
-		           	<img src="views/images/slide/slide02.jpg"> 	
-		           	<div class="slideCaption">
-		           		<h3>Lorem Ipsum</h3>
-				   		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		           	</div>
-		           </li>
-		           
-			       <li>
-		           	<img src="views/images/slide/slide03.jpg">
-		           	<div class="slideCaption">
-		           		<h3>Lorem Ipsum</h3>
-				   		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		           	</div>
-		           </li>
-		           
-			       <li>
-		           	<img src="views/images/slide/slide04.jpg">
-		           	<div class="slideCaption">
-		           		<h3>Lorem Ipsum</h3>
-				   		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		           	</div>
-		           </li>
-
-	    		</ul>
-
-			    <ol id="indicadores">			
-					<li role-slide = "1"><span class="fa fa-circle"></span></li>
-					<li role-slide = "2"><span class="fa fa-circle"></span></li>
-					<li role-slide = "3"><span class="fa fa-circle"></span></li>
-					<li role-slide = "4"><span class="fa fa-circle"></span></li>
-				</ol>
-
-				<div id="slideIzq"><span class="fa fa-chevron-left"></span></div>
-				<div id="slideDer"><span class="fa fa-chevron-right"></span></div>
-
-			</div>
-
-			<!--====  Fin de SLIDE ADMINISTRABLE  ====-->
+    		</div>

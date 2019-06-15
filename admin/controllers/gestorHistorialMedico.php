@@ -63,8 +63,16 @@ class historiaMedica{
 			        <td style="width:50px;">'.$item["ultima"].'</td>
 					<td>'.$item["diagnostico"].'</td>
 					<td>'.$item["tratamiento"].'</td>
-			        <td style="width:100px"><a href="#historiamedica'.$item["id"].'" data-toggle="modal"><span class="btn btn-info fa fa-pencil modificarMascota"></span></a>
-			        <a href="index.php?action=historiamedica&idBorrarMascota='.$item["id"].'"><span class="btn btn-danger fa fa-times eliminarrMascota" style="margin-left:10px;"></span></a></td>
+			        <td style="width:100px">
+			        	<a href="#historiamedica'.$item["id"].'" data-toggle="modal">
+			        		<span class="btn btn-info fa fa-pencil modificarMascota">
+			        		</span>
+			        	</a>
+			        	<a href="index.php?action=historiamedica&idBorrarMascota='.$item["id"].'">
+			        		<span class="btn btn-danger fa fa-times eliminarrMascota" style="margin-left:10px;">
+			        		</span>
+		        		</a>
+		        	</td>
 	        	</tr>
 
 	        		<div id="historiamedica'.$item["id"].'" class="modal fade">
