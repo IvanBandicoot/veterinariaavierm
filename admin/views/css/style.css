@@ -292,6 +292,11 @@ ARTICULOS
 	background:white;
 }
 
+#seccionNoticia{
+	padding:20px;
+	background:white;
+}
+
 /* Agregar Artículos */
 
 #agregarArtículo{
@@ -311,6 +316,23 @@ ARTICULOS
 	margin-top:10px;
 }
 
+#agregarNoticia{
+	margin:20px auto;
+	border:2px solid #ccc;
+	padding:20px;
+}
+
+#agregarNoticia input{
+	margin-bottom:20px;
+}
+
+#agregarNoticia p{
+	position:relative;
+	text-align:center;
+	width:100%;
+	margin-top:10px;
+}
+
 #arrastreImagenArticulo{
 	position:relative;
 	margin:20px auto;
@@ -321,7 +343,24 @@ ARTICULOS
 	padding:20px;
 }
 
+#arrastreImagenNoticia{
+	position:relative;
+	margin:20px auto;
+	height:auto;
+	text-align:center;
+	border:2px dashed #ccc;
+	color:#999;
+	padding:20px;
+}
+
 #arrastreImagenArticulo #imagenArticulo{
+	position: relative;
+	margin:auto;
+	width:200px;
+	height:auto;
+}
+
+#arrastreImagenNoticia #imagenNoticia{
 	position: relative;
 	margin:auto;
 	width:200px;
@@ -341,8 +380,38 @@ ARTICULOS
 	margin:20px auto 0px auto;
 }
 
-/* Editar Artículos */
+#guardarNoticia{
+	position:relative;
+	display:block;
+	margin:20px auto 0px auto;
+}
 
+/* Editar Artículos y Noticia */
+
+#editarNoticia li{
+	position:relative;
+	display:inline-block;
+	padding:20px;
+	width: 100%;
+}
+
+#editarNoticia li span{
+	position:relative;
+	display:inline-block;
+	width:100%;
+	height:40px;
+	background: #eee;
+	
+}
+
+#editarNoticia li span i{
+	float:right;
+	margin:5px;
+}
+
+#editarNoticia li span button{
+	margin-top:2.5px;
+}
 
 #editarArticulo li{
 	position:relative;
@@ -712,6 +781,61 @@ ESCRITORIO GRANDE
 	}
 
 	#editarArticulo #editarImagen span{
+		position:absolute;
+		top:30px;
+		right:10px;
+		cursor:pointer;
+		width:30px;
+		height:30px;
+		text-align:center;
+		line-height:30px;
+		background:white;
+		z-index:1;
+		color:white;
+		background: red;
+		border-radius:5px;
+	}
+
+	/*Noticia*/
+
+		#editarNoticia li img{
+		float:left;
+		width:20%;
+		margin:20px 20px 0 0 ;
+	}
+
+	#editarNoticia input{
+		margin:10px;
+		padding:10px;
+		width:75%;
+	}
+
+	#editarNoticia textarea{
+		margin:10px;
+		padding:10px;
+		width:75%;
+	}
+
+	#editarNoticia textarea#editarContenido{
+		margin:10px;
+		padding:10px;
+		width:97%;
+	}
+
+	#editarNoticia #editarImagen{
+		position: relative;
+		float:left;
+		width:20%;
+		margin:10px 20px 0 0;
+		border:2px dashed #ccc;
+		padding:10px;
+	}
+
+	#editarNoticia #editarImagen img{
+		width:100%;
+	}
+
+	#editarNoticia #editarImagen span{
 		position:absolute;
 		top:30px;
 		right:10px;
