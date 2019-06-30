@@ -134,21 +134,29 @@ class Vacuna{
 
 	public function consultarVacunasUsuario(){
 
-		if(isset($_POST["cedulaU"])){
+		if(isset($_POST["cedulaU"]) && isset($_POST["cedulaPe"])){
 
 			$datos = $_POST["cedulaU"];
 
-			$respuesta = VacunaModel::consultarVacunasUsuarioModel($datos, "vacuna");
+			if($datos == $_POST["cedulaPe"]){
 
-			foreach ($respuesta as $row => $item) {
-				echo '<tr>
-				        <td>'.$item["nombre"].'</td>
-				        <td>'.$item["tipovacuna"].'</td>
-				        <td>'.$item["fecha"].'</td>
-				        <td><a disabled="false" href="index.php?action=vacunasConsulta&lista='.$item["id"].'"><span class="btn btn-success fa fa-user" style="margin-left:10px;"></span></a></td>
-				        <td></td>
-				      </tr>';
-			}
+				$respuesta = VacunaModel::consultarVacunasUsuarioModel($datos, "vacuna");
+
+				foreach ($respuesta as $row => $item) {
+					echo '<tr>
+					        <td>'.$item["nombre"].'</td>
+					        <td>'.$item["tipovacuna"].'</td>
+					        <td>'.$item["fecha"].'</td>
+					        <td><a disabled="false" href="index.php?action=vacunasConsulta&lista='.$item["id"].'"><span class="btn btn-success fa fa-user" style="margin-left:10px;"></span></a></td>
+					        <td></td>
+					      </tr>';
+				}
+
+			}else{
+
+				echo '<div class="alert alert-warning">Tu cedula es incorrecta</div>';
+
+			} // fin de comparar cedulas
 
 		}
 	}

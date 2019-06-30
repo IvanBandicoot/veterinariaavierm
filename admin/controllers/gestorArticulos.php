@@ -91,8 +91,10 @@ class Articulo{
 		$respuesta = ArticuloModel::mostrarArticulosModel("articulos");
 
 		foreach ($respuesta as $row => $item) {
-			
-			echo '<tr><td>'.$item["nombre"].'</td>
+
+			if($item["cantidad"] != 0){
+
+				echo '<tr><td>'.$item["nombre"].'</td>
 			    	<td>'.$item["descripcion"].'</td>
 			    	<td>'.$item["cantidad"].'</td>
 			        <td>
@@ -167,6 +169,9 @@ class Articulo{
 		      		</div>
 
 		      		</div>';
+
+			}
+
 		}
 
 	}
@@ -387,58 +392,67 @@ class Articulo{
 	#------------------------------------------
 	public function mostrarArticulosReservadors(){
 
-		if(isset($_POST["cedulaRe"])){
+		$iguales = false;
+
+		if(isset($_POST["cedulaRe"]) && isset($_POST["cedulaP"])){
 
 			$cedula = $_POST["cedulaRe"];
 
-			$respuesta = ArticuloModel::mostrarArticulosReservadosModel($cedula, "reservacion");
+			if($cedula == $_POST["cedulaP"])	$iguales = true;
 
-			$total = 1000;
-			foreach ($respuesta as $row => $item) {
-				echo '<tr>
-				        <td>'.$item["nombre"].'</td>
-				        <td>'.$item["descripcion"].'</td>
-				        <td>'.$item["cantidadreserva"].'</td>
-				        <td>'.(int)$item["precio"]*$item["cantidadreserva"]*$total.'Bs</td>
-				        <td>'.$item["cedula"].'</td>
-				        <td>
-				        	<a disabled="false" href="#reserva'.$item["id"].'" data-toggle="modal">
-				        		<span class="btn btn-danger fa fa-times" style="margin-left:10px;"></span>
-			        		</a>
-			        		<input type="hidden" name="idArticulo" value="'.$item["idarticulo"].'">
-		        		</td>
-				      </tr>
+			if($iguales){
 
-				      <div id="reserva'.$item["id"].'" class="modal fade">
-			      	
-			      		<div class="modal-dialog modal-content">
-			      		
-			      			<div class="modal-header" style="border:1px solid #eee">
+				$respuesta = ArticuloModel::mostrarArticulosReservadosModel($cedula, "reservacion");
 
-			      				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			      			
-			      				<h3 class="modal-title">¿Seguro Que Desea Eliminar La Reserva?</h3>
-			      		
-			      			</div>
+					$total = 1000;
+					foreach ($respuesta as $row => $item) {
+						echo '<tr>
+						        <td>'.$item["nombre"].'</td>
+						        <td>'.$item["descripcion"].'</td>
+						        <td>'.$item["cantidadreserva"].'</td>
+						        <td>'.(int)$item["precio"]*$item["cantidadreserva"]*$total.'Bs</td>
+						        <td>'.$item["cedula"].'</td>
+						        <td>
+						        	<a disabled="false" href="#reserva'.$item["id"].'" data-toggle="modal">
+						        		<span class="btn btn-danger fa fa-times" style="margin-left:10px;"></span>
+					        		</a>
+					        		<input type="hidden" name="idArticulo" value="'.$item["idarticulo"].'">
+				        		</td>
+						      </tr>
 
-			      			<div class="modal-footer" style="border:1px solid #eee">
-			      					
-			      				<form style="padding: 20px" method="post"> 
+						      <div id="reserva'.$item["id"].'" class="modal fade">
+					      	
+					      		<div class="modal-dialog modal-content">
+					      		
+					      			<div class="modal-header" style="border:1px solid #eee">
 
-			      					<input type="hidden" name="idarticulo" value="'.$item["idarticulo"].'" readonly>
-			      					<input type="hidden" name="idRes" value="'.$item["id"].'" readonly>
+					      				<button type="button" class="close" data-dismiss="modal">&times;</button>
+					      			
+					      				<h3 class="modal-title">¿Seguro Que Desea Eliminar La Reserva?</h3>
+					      		
+					      			</div>
 
-							       <div class="form-group text-center">
-							       		<input type="submit" id="EliminarArticulo" value="Eliminar" class="btn btn-danger">
-							       </div>
+					      			<div class="modal-footer" style="border:1px solid #eee">
+					      					
+					      				<form style="padding: 20px" method="post"> 
 
-			      				</form>
+					      					<input type="hidden" name="idarticulo" value="'.$item["idarticulo"].'" readonly>
+					      					<input type="hidden" name="idRes" value="'.$item["id"].'" readonly>
 
-			      			</div>
+									       <div class="form-group text-center">
+									       		<input type="submit" id="EliminarArticulo" value="Eliminar" class="btn btn-danger">
+									       </div>
 
-		      			</div>
+					      				</form>
 
-				      ';
+					      			</div>
+
+				      			</div>
+
+						      ';
+					}
+			}else{
+				echo '<div class="alert alert-warning">Tu cedula es incorrecta</div>';
 			}
 
 		}

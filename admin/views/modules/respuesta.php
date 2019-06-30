@@ -1,5 +1,5 @@
 <div id="backIngreso">
-			<form method="post" id="formIngreso" onsubmit="return validarIngreso()">
+		<form method="post" id="formIngreso" onsubmit="return validarIngreso()">
 
 				<h1 id="tituloFormIngreso">PREGUNTA SEGURIDAD</h1>
 

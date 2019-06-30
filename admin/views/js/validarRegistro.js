@@ -4,6 +4,7 @@ VALIDAR USUARIO EXISTENTE AJAX
 
 var usuarioExistente = false;
 var correoExistente = false;
+var cedulaExistente = false;
 
 $("#usuarioRegistro").change(function(){
 
@@ -23,7 +24,7 @@ $("#usuarioRegistro").change(function(){
 			
 			if(respuesta == 0){
 
-				$("label[for='usuarioR'] span").html('<p style="color:white;">Este usuario ya existe en la base de datos</p>');
+				$("label[for='usuarioR'] span").html('<p style="color:red;">Este usuario ya existe en la base de datos</p>');
 
 				usuarioExistente = true;
 			}
@@ -66,7 +67,7 @@ $("#correoRegistro").change(function(){
 			
 			if(respuesta == 0){
 
-				$("label[for='correoR'] span").html('<p>Este correo ya existe en la base de datos</p>');
+				$("label[for='correoR'] span").html('<p style="color:red;">Este correo ya existe en la base de datos</p>');
 
 				correoExistente = true;
 			}
@@ -79,6 +80,43 @@ $("#correoRegistro").change(function(){
 
 			}
 		
+		}
+
+	});
+
+});
+
+$("#cedulaRegistro").change(function(){
+
+	var identidad = $("#cedulaRegistro").val();
+
+	var datos = new FormData();
+
+	datos.append("validarCedula", identidad);
+
+	$.ajax({
+		url:"views/ajax/registro.php",
+		method:"POST",
+		data:datos,
+		cache:false,
+		contentType:false,
+		processData:false,
+		success:function(respuesta){
+
+			if(respuesta == 0){
+
+				$("label[for='cedulaR'] span").html('<p style="color:red;">La cedula ya existe en la base de datos</p>');
+
+				cedulaExistente = true;
+
+			}else{
+
+				$("label[for='cedulaR'] span").html("");
+
+				cedulaExistente = false;
+
+			}
+
 		}
 
 	});
@@ -108,30 +146,30 @@ function validarRegistro(){
 
 	var respuesta = $("#rRegistro").val();
 
-	/* VALIDAR NOMBRE */
 		console.log('correo', correoExistente, Date.now());
 		if(correoExistente){
 
-			document.querySelector("label[for='correoR'] span").innerHTML = "<p>Este email ya existe en la base de datos</p>";
+			document.querySelector("label[for='correoR'] span").innerHTML = "<p style='color:red;'>Este email ya existe en la base de datos</p>";
 
 			return false;
 		}
 
+/* VALIDAR NOMBRE */
 	if(nombre != ""){
 
 		var caracteres = nombre.length;
-		var expresion = /^[a-zA-Z0-9]*$/;
+		var expresion = /^[a-zA-Z]*$/;
 
 		if(caracteres > 10){
 
-			document.querySelector("label[for='nombreR'] span").innerHTML += "<br>Escriba por favor menos de 10 caracteres.";
+			document.querySelector("label[for='nombreR'] span").innerHTML += "<br> <p style='color:red;'>Escriba por favor menos de 10 caracteres.</p>";
 
 			return false;
 		}
 
 		if(!expresion.test(nombre)){
 
-			document.querySelector("label[for='nombreR'] span").innerHTML += "<br>No escriba caracteres especiales.";
+			document.querySelector("label[for='nombreR'] span").innerHTML += "<br> <p style='color:red;'>No escriba caracteres especiales ni numeros.</p>";
 
 			return false;
 
@@ -139,7 +177,7 @@ function validarRegistro(){
 
 		if(usuarioExistente){
 
-			document.querySelector("label[for='usuarioR'] span").innerHTML = "<p>Este usuario ya existe en la base de datos</p>";
+			document.querySelector("label[for='usuarioR'] span").innerHTML = "<p style='color:red;'>Este usuario ya existe en la base de datos</p>";
 
 			return false;
 		}
@@ -151,18 +189,21 @@ function validarRegistro(){
 	if (apellido != ""){
 
 		var caracteres = apellido.length;
-		var expresion = /^[a-zA-Z0-9]*$/;
+		var expresion = /^[a-zA-Z]*$/;
 
 		if(caracteres > 10){
-			document.querySelector("label[for='apellidoR'] span").innerHTML += "<br> Escribe por favor menos de 10 caracteres";
+			document.querySelector("label[for='apellidoR'] span").innerHTML += "<br> <p style='color:red;'>Escribe por favor menos de 10 caracteres.</p>";
 			return false;
 		}
 
 		if(!expresion.test(apellido)){
-			document.querySelector("label[for='apellidoR'] span").innerHTML += "<br> No escriba caracteres especiales";
+			document.querySelector("label[for='apellidoR'] span").innerHTML += "<br> <p style='color:red;'>No escriba caracteres especiales ni numeros.</p>";
 			return false;
 		}
+
 	}
+
+
 
 	/*VALIDAR USUARIO*/
 
@@ -172,12 +213,12 @@ function validarRegistro(){
 		var expresion = /^[a-zA-Z0-9]*$/;
 
 		if(caracteres > 10){
-			document.querySelector("label[for='usuarioR'] span").innerHTML += "<br> Escriba por favor menos de 10 caracteres";
+			document.querySelector("label[for='usuarioR'] span").innerHTML += "<br> <p style='color:red;'>Escriba por favor menos de 10 caracteres.</p>";
 			return false;
 		}
 
 		if(!expresion.test(usuario)){
-			document.querySelector("label[for='usuarioR'] span").innerHTML += "<br> No escriba caracteres especiales";
+			document.querySelector("label[for='usuarioR'] span").innerHTML += "<br> <p style='color:red;'>No escriba caracteres especiales.</p>";
 			return false;
 		}
 	}
@@ -189,7 +230,7 @@ function validarRegistro(){
 
 		if(!expresion.test(email)){
 
-			document.querySelector("label[for='emailRegistro'] span").innerHTML += "<br>Escriba correctamente el Email.";
+			document.querySelector("label[for='emailRegistro'] span").innerHTML += "<br> <p style='color:red;'>Escriba correctamente el Email.</p>";
 
 			return false;
 
@@ -205,13 +246,21 @@ function validarRegistro(){
 		var expresion = /^[0-9]*$/;
 
 		if(caracteres > 8){
-			document.querySelector("label[for='cedulaR'] span").innerHTML += "<br> Longitud minima de 8 caracteres";
+			document.querySelector("label[for='cedulaR'] span").innerHTML += "<br> <p style='color:red;'>Longitud minima de 8 caracteres.</p>";
 			return false;
 		}
- span
+
 		if(!expresion.test(cedula)){
-			document.querySelector("label[for='cedulaR'] span").innerHTML += "<br> Escriba solo numeros por favor";
+			document.querySelector("label[for='cedulaR'] span").innerHTML += "<br> <p style='color:red;'>Escriba solo numeros por favor.</p>";
 			return false;
+		}
+
+		if(cedulaExistente){
+
+			document.querySelector("label[for='cedulaR'] span").innerHTML = "<p style='color:red;'>La cedula ya existe en la base de datos</p>";
+
+			return false;			
+
 		}
 	}
 
@@ -224,14 +273,14 @@ function validarRegistro(){
 
 		if(caracteres < 6){
 
-			document.querySelector("label[for='passwordR'] span").innerHTML += "<br>Escriba por favor más de 6 caracteres.";
+			document.querySelector("label[for='passwordR'] span").innerHTML += "<br><p style='color:red;'>Escriba por favor más de 6 caracteres.</p>";
 
 			return false;
 		}
 
 		if(!expresion.test(password)){
 
-			document.querySelector("label[for='passwordR'] span").innerHTML += "<br>No escriba caracteres especiales.";
+			document.querySelector("label[for='passwordR'] span").innerHTML += "<br><p style='color:red;'>No escriba caracteres especiales.</p>";
 
 			return false;
 
@@ -243,15 +292,15 @@ function validarRegistro(){
 
 	if(respuesta != ""){
 		var caracteres = respuesta.length;
-		var expresion = /^[a-zA-Z0-9]*$/;
+		var expresion = /^[a-zA-Z]*$/;
 
 		if(caracteres > 10){
-			document.querySelector("label[for='respuestaR']").innerHTML += "<br> No escriba mas de 10 caracteres";
+			document.querySelector("label[for='respuestaR'] span").innerHTML += "<br> <p style='color:red;'> No escriba mas de 10 caracteres.</p>";
 			return false;
 		}
 
 		if(!expresion.test(respuesta)){
-			document.querySelector("label[for='respuestaR']").innerHTML += "<br> No escriba caracteres especiales";
+			document.querySelector("label[for='respuestaR'] span").innerHTML += "<br> <p style='color:red;' >No escriba caracteres especiales ni numeros.</p>";
 			return false;
 		}
 	}

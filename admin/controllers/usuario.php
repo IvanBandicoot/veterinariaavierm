@@ -47,6 +47,7 @@ class Usuario{
 					$_SESSION["apellido"] = $respuesta["apellido"];
 					$_SESSION["correo"] = $respuesta["correo"];
 					$_SESSION["id"] = $respuesta["id"];
+					$_SESSION["cedula"] = $respuesta["cedula"];
 					
 					header("location:inicio");
 				
@@ -65,13 +66,13 @@ class Usuario{
 			}//fin de intentos
 			else{
 
-				$intentos = 0;
+				$intentos = 3;
 
 				$datosController = array("usuarioActual" => $usuarioActual, "actualizarIntentos" => $intentos);
 				
 				$respuestaActualizarIntentos = UsuarioModel::intentosModel($datosController, "usuario");
 
-				echo '<div class="alert alert-danger">Ha fallado 3 veces, Ingrese a traves del recaptcha</div>';
+				echo '<div class="alert alert-danger">Usuario bloqueado, Debe cambiar la clave, 3 intentos fallidos.</div>';
 
 			}
 
@@ -104,7 +105,20 @@ class Usuario{
 			$respuesta = UsuarioModel::registrarUsuarioModel($datosController,"usuario");
 
 				if($respuesta == "ok"){
-					echo '<div class="form-control formIngreso">Se ha registrado satisfactoriamente</div>';
+					echo '<script>
+								swal({
+								title: "¡OK!",
+								text: "¡Usuario Creado Correctamente!",
+								type: "success",
+								confirmButtonText: "Cerrar",
+								closeOnConfirm: false
+								},
+								function(isConfirm){
+									if (isConfirm){
+										window.location = "ingreso";
+									}
+								});
+							</script>';
 				}else{
 					echo '<div class="alert alert-danger">Ha fallado en registrarse</div>';
 				}
@@ -129,6 +143,7 @@ class Usuario{
 
 						$("#btn-ingreso").hide("fast");
 						$("#usuarioIngreso").hide("fast");
+						$("#label").hide("fast");
 						$("#forget").hide("fast");
 
 					</script>
@@ -140,13 +155,12 @@ class Usuario{
 						          <input type="text" readonly value="'.$respuesta["seguridad"].'" class="form-control" required>
 						        </div>
 						       <div class="form-group">
-						          <input type="text" name="RespuestaP" placeholder="Respuesta" class="form-control" required>
+						          <input type="text" name="RespuestaP" id="respuestaRC" placeholder="Respuesta" class="form-control" required>
 						        </div>
 				       			<div class="form-group text-center">
 						       		<input type="submit" value="Enviar" class="btn btn-warning">
 						       </div>
 		       				   <div style="margin-top: 10px;"><a href="ingreso" id="forget">Sé mi contraseña</a></div>
-			  	       		   <div style="margin:15px 0 15px;"><a href="registro" id="forget">¿Está registrado?</a></div>
 				        </form>
 					';
 		}
@@ -201,6 +215,12 @@ class Usuario{
 			$respuesta = UsuarioModel::nuevaContrasenaModel($datosController, "usuario");
 
 			if($respuesta == "ok"){
+
+				$intentos = 0;
+
+				$datosController = array("usuarioActual" => $_POST["Usuario"], "actualizarIntentos" => $intentos);
+				
+				$respuestaActualizarIntentos = UsuarioModel::intentosModel($datosController, "usuario");
 
 				echo '<script>
 								swal({
@@ -265,6 +285,21 @@ class Usuario{
 		}else{
 			echo 1;
 		}
+	}
+
+	#validar cedula existente
+	public function validarCedulaController($validarcedula){
+
+		$datos = $validarcedula;
+
+		$respuesta = UsuarioModel::validarCedulaModel($datos, "usuario");
+
+		if(strlen($respuesta["cedula"]) > 0){
+			echo 0;
+		}else{
+			echo 1;
+		}
+
 	}
 	
 }

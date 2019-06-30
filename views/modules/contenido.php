@@ -5,21 +5,13 @@
 <section id="noticias-index">
     <h3>NOTICIAS</h3>
     <div class="contenedor">
-        <article>
-            <img src="views/img/osopolar.jpg" alt="">
-            <h4>Calentamiento Global</h4>
-        </article>
-        <article>
-            <img src="views/img/cochinos.jpg" alt="">
-            <h4>Criadero para diciembre</h4>
-        </article>
-        <article>
-            <img src="views/img/pez.jpg" alt="">
-            <h4>¿Pez con luz?</h4>
-        </article>
-        <article>
-            <img src="views/img/tigre.jpg" alt="">
-            <h4>Sigue en peligro de extinsión</h4>
-        </article>
+        
+        <?php
+
+            $noticia = new Noticia();
+            $noticia -> mostrarNoticia();
+
+        ?>
+        
     </div>
 </section>

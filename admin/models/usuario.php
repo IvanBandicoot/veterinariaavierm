@@ -6,7 +6,7 @@ class UsuarioModel{
 
 		public function ingresoModel($datos, $tabla){
 
-		$stmt = Conexion::conectar()->prepare("SELECT id, nombre, apellido, correo, usuario, contrasena, intentos FROM $tabla WHERE usuario = :usuario");
+		$stmt = Conexion::conectar()->prepare("SELECT id, nombre, apellido, correo, usuario, cedula, contrasena, intentos FROM $tabla WHERE usuario = :usuario");
 
 		$stmt -> bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
 
@@ -126,6 +126,21 @@ class UsuarioModel{
 		$stmt = Conexion::conectar()->prepare("SELECT correo FROM $tabla WHERE correo = :correo");
 
 		$stmt -> bindParam(":correo", $datos, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+	}
+
+	#validar cedula existente
+	public function validarCedulaModel($datos, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("SELECT cedula FROM $tabla WHERE cedula = :cedula");
+
+		$stmt -> bindParam(":cedula", $datos, PDO::PARAM_INT);
 
 		$stmt -> execute();
 

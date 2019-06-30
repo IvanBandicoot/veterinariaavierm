@@ -7,6 +7,7 @@ class Ajax{
 
 	public $validarUsuario;
 	public $validarEmail;
+	public $validarCedula;
 
 	public function validarUsuarioAjax(){
 
@@ -27,6 +28,16 @@ class Ajax{
 		echo $respuesta;
 	}
 
+	public function validarCedulaAjax(){
+
+		$datos = $this->validarCedula;
+
+		$respuesta = Usuario::validarCedulaController($datos);
+
+		echo $respuesta;
+
+	}
+
 }
 
 //usuario
@@ -43,5 +54,13 @@ if(isset($_POST["validarEmail"])){
 	$b = new Ajax();
 	$b -> validarEmail = $_POST["validarEmail"];
 	$b -> validarEmailAjax();
+}
+
+if(isset($_POST["validarCedula"])){
+
+	$c = new Ajax();
+	$c -> validarCedula = $_POST["validarCedula"];
+	$c -> validarCedulaAjax();
+
 }
 

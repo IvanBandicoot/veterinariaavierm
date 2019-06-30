@@ -8,7 +8,6 @@
 				<input style="background-color: #FAC8CD;" class="form-control formIngreso btn btn-warning" id="btn-ingreso" type="submit" value="Enviar">
 
 				<div style="margin-top: 20px;"><a style="color: #FAC8CD;" id="forget" href="ingreso">Sé mi contraseña</a></div>
-				<div style="margin-top:15px;"><a style="color: #FAC8CD;" id="forget" href="registro">¿Está registrado?</a></div>
 
 				<?php
 					$nueva = new Usuario();

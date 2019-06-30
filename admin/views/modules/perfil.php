@@ -34,6 +34,10 @@
 				<h4>Apellido: <?php echo $_SESSION["apellido"];?></h4>
 
 				<h4>Email: <?php echo $_SESSION["correo"];?></h4>
+
+				<?php
+					$cedula = $_SESSION["cedula"];
+				?>
 	
 				<h4>Contraseña: *******</ph4>
 			 </div>
@@ -134,6 +138,7 @@
 			<form method="post" style="margin-bottom:10px;">
 				<h3>Ingrese su C.I</h3>
 				<p>Al ingresar su C.I le mostrara sus articulos reservados</p>
+				<input type="hidden" placeholder="C.I:" name="cedulaP" value="'.$cedula.'">
 				<input type="text" placeholder="C.I:" name="cedulaRe">
 			</form>
 

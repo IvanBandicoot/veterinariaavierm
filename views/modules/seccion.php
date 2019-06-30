@@ -1,22 +1,12 @@
         <section id="galeria-index">
             <h3>GALERÍA</h3>
             <div class="contenedor">
-                <div class="info-pet">
-                    <img src="views/img/perro.jpg" alt="">
-                    <h4>Toby</h4>
-                </div>
-                <div class="info-pet">
-                    <img src="views/img/gato.jpg" alt="">
-                    <h4>Misu</h4>
-                </div>
-                <div class="info-pet">
-                    <img src="views/img/coabaya.jpg" alt="">
-                    <h4>Stuart</h4>
-                </div>
-                <div class="info-pet">
-                    <img src="views/img/canguro.jpg" alt="">
-                    <h4>Jack</h4>
-                </div>
+                <?php
+
+                    $fotos = new Galeria();
+                    $fotos -> mostrarGaleria();
+
+                ?>
             </div>
         </section>
         <section id="productos-index">
